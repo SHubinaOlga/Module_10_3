@@ -33,6 +33,7 @@ class Bank:
                 print(f'Снятие: {random_2}. Баланс: {self.balance}')
                 if random_2 > self.balance:
                     print(f"Запрос отклонён, недостаточно средств")
+                    self.lock.acquire()
                 time.sleep(0.001)
 
 bk = Bank()
